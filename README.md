@@ -1,1 +1,10 @@
-# GeneExpression
+At the end of our project we decided to do some additional research into how difficult it wouldbe to find a right amount of genes to target for a therapy based on miRnas and genes’ expressionnormalization. 
+
+The idea was to try and simulate a different normalized expression for some genesand find out how closer to the normal condition of co-expression we could get. 
+Since we were notinterested in the precise correlation value between two genes we decided to measure the differencebetween co-expressions by comparing the resulting adjacency matrices, i.e.  considering only differences that were big enough to change the relation (edge or no edge) between two genes.
+
+In our trials we decided to only consider the hubs of the differential co-expression network, sincethey are the more altered genes.Initially we tried by changing the expression of just one gene, creating a vector with mean equal tothe mean expression of that same gene in a normal condition. 
+
+Then, since the results were not asgood as expected we increased the number of genes to alter at the same time (or rather to targetwith miRna), and looked for the best combination.  We tried out all possible combinations of 2, 3and 4 genes at a time.  Unfortunately due to the factor of time we could not try all the combinationof 5 genes (3 millions and a half), but trying out half a million of them we managed to find the bestresult thus far with genes ERBB3 SDC4, GRB7, COL8A1, MEX3A. Normalizing their expressionallowed us to reduce the difference of the normal adjacency matrix and the cancerous one from26652 to 26150 (these numbers are the sum of how many differences are present when comparingthe two matrices element-wise).
+
+Knowing  that  we  lacked  the  means  to  carry  out  an  exhaustive  research  we  decided  to  look  fora trend in the improvements of the results in function of the number of genes.  Doing some addi-tional non-exhaustive tests on sets of 6 and 7 genes too we traced the following function.  As wecan see when we add more then 5 genes the speed of the improvement rate decreases, because theselection of genes will also include less influential ones.  To see in details the code we used for oursimulation you can check out this github repository.
