@@ -1,3 +1,5 @@
+# GENE EXPRESSION REGULATION
+
 At the end of our project we decided to find the right amount of genes to target for a therapy based on miRnas and genes’ expression normalization. 
  
 The idea was to try and simulate a different normalized expression for some genes and find out how closer to the normal condition of co-expression we could get. 
